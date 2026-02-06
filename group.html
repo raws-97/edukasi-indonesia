@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Edukasi Institusi Indonesia</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.png"
+    />
+
+    <!-- ======== CSS here ======== -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: relative;
+        animation: rotate 1s linear infinite
+      }
+      .loader::before , .loader::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 0px;
+        border-radius: 50%;
+        border: 5px solid #FFF;
+        animation: prixClipFix 2s linear infinite ;
+      }
+      .loader::after{
+        border-color: #FF3D00;
+        animation: prixClipFix 2s linear infinite , rotate 0.5s linear infinite reverse;
+        inset: 6px;
+      }
+
+      .scored {
+        background-color: #e8f7ee; /* soft green */
+        border-color: #28a745;
+      }
+
+        #pass {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 50px;
+          gap: 8px;
+        }
+
+
+      #pass input {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+
+      #pass input:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+      }
+
+
+      @keyframes rotate {
+        0%   {transform: rotate(0deg)}
+        100%   {transform: rotate(360deg)}
+      }
+
+      @keyframes prixClipFix {
+          0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+          25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+          50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+          75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+          100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- ======== preloader start ======== -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="spinner">
+          <div class="spinner-container">
+            <div class="spinner-rotator">
+              <div class="spinner-left">
+                <div class="spinner-circle"></div>
+              </div>
+              <div class="spinner-right">
+                <div class="spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- ======== header start ======== -->
+    <header class="header">
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                  <img src="assets/img/logo/logo.png" alt="Logo" />
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+
+                <div
+                  class="collapse navbar-collapse sub-menu-bar"
+                  id="navbarSupportedContent"
+                >
+                  <ul id="nav" class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="page-scroll active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#training">Training</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#about">Service</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#footer">About</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- navbar collapse -->
+              </nav>
+              <!-- navbar -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- navbar area -->
+    </header>
+    <!-- ======== header end ======== -->
+
+        <!-- ======== hero-section start ======== -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+          <div class="col-lg-6">
+            <div class="hero-content">
+              <h1 class="wow fadeInUp" data-wow-delay=".4s">
+                Edukasi Indonesia
+              </h1>
+              <p class="wow fadeInUp" data-wow-delay=".6s">
+                EDUKASI INSTITUSI INDONESIA meningkatkan sumber daya manusia melalui pelatihan, konsultasi, dan kegiatan edukasi. Dengan komitmen "Unlocking Future Potential," kami memberdayakan individu untuk masa depan yang lebih cerah.
+              </p>
+              <a href="#features" class="scroll-bottom">
+                <i class="lni lni-arrow-down"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
+              <img src="assets/img/hero/hero-image.png" width="100%" style="border-radius: 20px;" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== hero-section end ======== -->
+
+    <!-- ======== feature-section start ======== -->
+     <div id="pass">
+      <form id="loginForm">
+         <input type="password" id="password" placeholder="Password" required>
+         <button class="btn btn-primary" id="submit-login">Submit</button>
+      </form>  <br>
+      
+    </div>
+    <center><div id="invalid-password-alert" style="width: 200px; margin-top: 30px; display: none;" class="alert alert-danger" role="alert">
+        Invalid Password!
+    </div></center>
+    
+    
+
+    <section id="training" class="feature-extended-section pt-100" style="display: none;">
+      <div class="container">
+
+        <div class="row mb-4">
+          <div class="col">
+            <h3>Selamat datang, Assessor <span id="assessor-name"></span></h3>
+            <hr>
+            <h2>Group Evaluation</h2>
+            <p>Klik group untuk melakukan penilaian individu.</p>
+            <p style="color: red; font-size: 8pt;">*Penilaian ini diluar dari Pre Test dan Post Test, dengan bobot 30%.</p>
+          </div>
+        </div>
+
+        <div class="row g-4" id="groupList"></div>
+
+      </div>
+    </section>
+
+    <div id="loading" style="display: none;">
+      <center><span class="loader"></span> <br>
+        <span>Loading...</span>
+      </center>
+    </div>
+    
+
+
+    <!-- ================= MODAL ================= -->
+    <div class="modal fade" id="penilaianModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle">Penilaian</h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div style="display: none;" id="succes-alert" class="alert alert-success" role="alert">
+              Success! Penilaian Berhasil
+            </div>
+
+          <div class="modal-body" id="modalBody"></div>
+
+          <div class="modal-footer">
+            <strong id="grandTotal">Total: 0</strong>
+            <button id="submit-btn" class="btn btn-primary" onclick="submitPenilaian()">
+              Submit Penilaian
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script>
+/* ================= CONFIG ================= */
+
+const API_URL = "https://script.google.com/macros/s/AKfycbzCLb7ebfa9E9G_nIkhr16CxT7-fHFTSiOob7s3CN54xXK6I_UQaiw8mmkIiaxUJWgf_A/exec"; // 🔴 change
+const API_TOKEN = "QfCEqcwxto9MyrMvWhoQhY6KeX2rRRrnTYNL80oiHe0V0YGOTOa21HXbbUuTQ8H3"; // 🔴 change
+
+/* ================= STATE ================= */
+let activeGroupId = null;
+let activeMemberId = null;
+let activeAssessorId = null;
+let groups = [];
+let criteriaTemplate = [];
+
+/* ================= API HELPER ================= */
+
+async function apiFetch(route, params = {}) {
+  const query = new URLSearchParams({
+    route,
+    token: API_TOKEN,
+    ...params
+  }).toString();
+
+  const res = await fetch(`${API_URL}?${query}`);
+  const json = await res.json();
+
+  if (!json.success) {
+    throw new Error(json.message || "API error");
+  }
+
+  return json.data;
+}
+
+/* ================= DATA MAPPING ================= */
+
+function mapGroups(apiGroups) {
+  return apiGroups.map(g => ({
+    id: g.id,
+    name: g.group_name,
+    members: g.member.map(m => ({
+      id: m.member_id,
+      name: m.name,
+      score: m.score
+    }))
+  }));
+}
+
+/* ================= LOAD DATA ================= */
+
+async function loadData(groupData) {
+  try {
+    if (!Array.isArray(groupData) || groupData.length === 0) {
+      throw new Error("Invalid group data");
+    }
+
+    // fetch questions in parallel (future-proof)
+    const questionData = await apiFetch("get-all-questions");
+
+    // map & assign state
+    groups = mapGroups(groupData);
+    criteriaTemplate = questionData;
+
+    const assessor = groupData[0];
+
+    // UI updates
+    document.getElementById("pass").style.display = "none";
+    document.getElementById("training").style.display = "block";
+    document.getElementById("loading").style.display = "none";
+
+    document.getElementById("assessor-name").innerText =
+      assessor.assessor_name || "-";
+
+    activeAssessorId = assessor.assessor_id;
+
+    renderGroups();
+
+  } catch (error) {
+    console.error("loadData error:", error);
+    alert("Failed to load data from server.");
+  }
+}
+
+/* ================= RENDER GROUPS ================= */
+
+function renderGroups() {
+  const container = document.getElementById("groupList");
+  container.innerHTML = "";
+
+  groups.forEach(group => {
+    container.innerHTML += `
+      <div class="col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5>${group.name}</h5>
+            <p class="text-muted" style="margin-bottom: 20px; font-size:10pt;">
+              ${group.members.length} anggota
+            </p>
+            <hr>
+
+            ${group.members.map(m => {
+              const hasScore = m.score && Number(m.score) > 0;
+
+              return `
+                <div class="d-flex justify-content-between align-items-center border rounded p-2 mb-2
+                  ${hasScore ? 'scored' : ''}">
+                  <div>
+                    <strong>${m.name}</strong><br>
+                    <p style="font-size: 10pt; margin:0;">
+                      Score : ${m.score || '-'}
+                    </p>
+                  </div>
+                  <button class="btn btn-outline-primary btn-sm"
+                    onclick="openPenilaian('${group.id}','${m.id}')">
+                    Nilai
+                  </button>
+                </div>
+              `;
+            }).join("")}
+
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+
+/* ================= MODAL LOGIC ================= */
+
+function openPenilaian(groupId, memberId) {
+  document.getElementById('succes-alert').style.display = "none";
+  activeGroupId = groupId;
+  activeMemberId = memberId;
+
+  const group = groups.find(g => g.id == groupId);
+  const member = group.members.find(m => m.id == memberId);
+
+  document.getElementById("modalTitle").innerText =
+    `Penilaian – ${member.name} (${group.name})`;
+
+  const body = document.getElementById("modalBody");
+  body.innerHTML = "";
+
+  criteriaTemplate.forEach(section => {
+    body.innerHTML += `
+      <h6 class="mt-4">${section.section}</h6>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Kriteria</th>
+            <th>Bobot (%)</th>
+            <th>Nilai</th>
+            <th>Hasil</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${section.items.map(item => `
+            <tr>
+              <td>${item.label}</td>
+              <td>${item.weight}</td>
+              <td>
+                <input type="number" min=0 max=100
+                  class="form-control form-control-sm"
+                  oninput="handleScoreInput(this, ${item.weight})">
+              </td>
+              <td class="hasil">0</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    `;
+  });
+
+  document.getElementById("grandTotal").innerText = "Total: 0";
+
+  new bootstrap.Modal(
+    document.getElementById("penilaianModal")
+  ).show();
+}
+
+/* ================= CALCULATION ================= */
+
+function calculateScore(input, weight) {
+  const nilai = Number(input.value || 0);
+  const hasil = (nilai * weight) / 100;
+
+  input.closest("tr").querySelector(".hasil").innerText =
+    hasil.toFixed(2);
+
+  let total = 0;
+  document.querySelectorAll(".hasil").forEach(h => {
+    total += Number(h.innerText);
+  });
+
+  document.getElementById("grandTotal").innerText =
+    "Total: " + total.toFixed(2);
+}
+
+function handleScoreInput(input, weight) {
+  clampScore(input);
+  calculateScore(input, weight);
+}
+
+function clampScore(input) {
+  let value = Number(input.value);
+
+  if (isNaN(value)) {
+    input.value = "";
+    return;
+  }
+
+  if (value < 0) {
+    input.value = 0;
+  } else if (value > 100) {
+    input.value = 100;
+  }
+}
+
+/* ================= SUBMIT ================= */
+
+function submitPenilaian() {
+  const buttonElement = document.getElementById('submit-btn');
+
+  buttonElement.disabled = true;
+  buttonElement.innerHTML = "Submitting...";
+
+  if (!activeGroupId || !activeMemberId || !activeAssessorId) {
+    alert("Invalid context");
+    return;
+  }
+
+  const scores = [];
+
+  document.querySelectorAll("#modalBody table").forEach(table => {
+    const sectionTitle = table.previousElementSibling.innerText;
+
+    table.querySelectorAll("tbody tr").forEach(row => {
+      const label = row.children[0].innerText;
+
+      const weight = parseFloat(row.children[1].innerText);
+      const nilai = parseFloat(row.querySelector("input").value || 0);
+      const hasil = parseFloat(
+        row.querySelector(".hasil").innerText || 0
+      );
+
+      scores.push({
+        section: sectionTitle,
+        label,
+        weight,
+        value: nilai,     // raw score (0–100)
+        result: hasil     // weighted result (float)
+      });
+    });
+  });
+
+  const total = scores.reduce(
+    (sum, s) => sum + s.result,
+    0
+  );
+
+  const payload = {
+    groupId: activeGroupId,
+    memberId: activeMemberId,
+    assessorId : activeAssessorId,
+    total: Number(total.toFixed(2)), // float-safe
+    scores
+  };
+
+  postData("submit-score", payload)
+    .then(() => {
+      updateMemberScore(
+        activeGroupId,
+        activeMemberId,
+        payload.total
+      );
+
+      renderGroups();
+
+      document.getElementById('succes-alert').style.display = "block"
+
+      buttonElement.disabled = false;
+      buttonElement.innerHTML = "Submit Penilaian";
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Gagal menyimpan penilaian");
+
+      buttonElement.disabled = false;
+      buttonElement.innerHTML = "Submit Penilaian";
+    });
+}
+
+
+function postData(route, payload) {
+  return fetch(`${API_URL}?route=${route}&token=${API_TOKEN}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain"
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(res => res.json())
+  .then(json => {
+    if (!json.success) {
+      throw new Error(json.message || "API error");
+    }
+    return json.data;
+  });
+}
+
+function updateMemberScore(groupId, memberId, totalScore) {
+  const group = groups.find(g => String(g.id) === String(groupId));
+  if (!group) return;
+
+  const member = group.members.find(m => String(m.id) === String(memberId));
+  if (!member) return;
+
+  member.score = Number(totalScore);
+}
+
+/* ================= INIT ================= */
+
+// document.addEventListener("DOMContentLoaded", loadData);
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // stop page reload
+  const buttonElement = document.getElementById('submit-login')
+  const alertElemet = document.getElementById('invalid-password-alert')
+  const loadingElement = document.getElementById('loading')
+  const passwordElement = document.getElementById("password");
+  const passwordValue = passwordElement.value;
+
+  buttonElement.disabled = true
+  passwordElement.disabled = true
+  loadingElement.style.display = "block";
+  alertElemet.style.display = "none";
+
+  postData("password-check", { password : passwordValue })
+    .then(data => {
+      loadData(data)
+    })
+    .catch(err => {
+      buttonElement.disabled = false
+      passwordElement.disabled = false
+      loadingElement.style.display = "none";
+      alertElemet.style.display = "block";
+      console.error(err);
+      
+    });
+});
+</script>
+
+
+
+    <!-- ======== feature-section end ======== -->
+
+
+    <!-- ======== footer start ======== -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="widget-wrapper">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="footer-widget">
+                <div class="logo mb-30">
+                  <a href="index.html">
+                    <img src="assets/img/logo/logo.png" alt="" width="200px"/>
+                  </a>
+                </div>
+                <p class="desc mb-30 text-white">
+                  Gedung Wirausaha Lantai 1 Unit 104, Jl. HR Rasuna Said Kav. C-5, Jakarta Selatan (12920).
+                </p>
+                <ul class="socials">
+                  <li>
+                    <a href="https://www.instagram.com/info.eduindonesia/" target="_blank">
+                      <i class="lni lni-instagram-filled"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/company/edukasi-indonesia" target="_blank">
+                      <i class="lni lni-linkedin-original"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-2 col-md-6">
+              <div class="footer-widget">
+                <h3>About Us</h3>
+                <ul class="links">
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#training">Training</a></li>
+                  <li><a href="#service">Service</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-6">
+              <div class="footer-widget">
+                <h3>Last Training</h3>
+                <ul class="links">
+                  <li><a href="javascript:void(0)">How it works</a></li>
+                  <li><a href="javascript:void(0)">Privacy policy</a></li>
+                  <li><a href="javascript:void(0)">Terms of service</a></li>
+                  <li><a href="javascript:void(0)">Refund policy</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ======== footer end ======== -->
+
+    <!-- ======== scroll-top ======== -->
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ======== JS here ======== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
