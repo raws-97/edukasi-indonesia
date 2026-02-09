@@ -79,6 +79,17 @@
           75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
           100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
       }
+
+      @keyframes highlightPulse {
+        0%   { background-color: #fff3cd; }
+        50%  { background-color: #ffe69c; }
+        100% { background-color: #fff3cd; }
+      }
+
+      .highlight-search {
+        animation: highlightPulse 0.8s ease-in-out;
+      }
+
     </style>
   </head>
   <body>
@@ -405,7 +416,23 @@ function renderGroups() {
 }
 
 function filterGroups() {
-  const keyword = document.getElementById("searchInput").value.toLowerCase();
+  const keyword = document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+  // ⛔ do nothing if less than 3 chars
+  if (keyword.length < 3) {
+    document.querySelectorAll(".group-card").forEach(card => {
+      card.style.display = "block";
+      card.querySelectorAll(".member-item").forEach(member => {
+        member.style.display = "flex";
+        member.classList.remove("highlight-search");
+      });
+    });
+    return;
+  }
 
   document.querySelectorAll(".group-card").forEach(card => {
     const groupName = card.getAttribute("data-group").toLowerCase();
@@ -417,16 +444,27 @@ function filterGroups() {
       const match =
         memberName.includes(keyword) || groupName.includes(keyword);
 
-      member.style.display = match ? "flex" : "none";
-      if (match) hasVisibleMember = true;
+      if (match) {
+        member.style.display = "flex";
+        hasVisibleMember = true;
+
+        // ✨ highlight animation (restart animation)
+        member.classList.remove("highlight-search");
+        void member.offsetWidth; // force reflow
+        member.classList.add("highlight-search");
+      } else {
+        member.style.display = "none";
+        member.classList.remove("highlight-search");
+      }
     });
 
-    // hide entire group if no member matches
-    card.style.display = hasVisibleMember || groupName.includes(keyword)
-      ? "block"
-      : "none";
+    card.style.display =
+      hasVisibleMember || groupName.includes(keyword)
+        ? "block"
+        : "none";
   });
 }
+
 
 
 /* ================= MODAL LOGIC ================= */
