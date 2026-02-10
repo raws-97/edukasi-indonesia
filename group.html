@@ -230,17 +230,21 @@
             <p style="color: red; font-size: 8pt;">*Penilaian ini diluar dari Pre Test dan Post Test, dengan bobot 30%.</p>
           </div>
 
-          <input
-            type="text"
-            id="searchInput"
-            class="form-control mb-3"
-            placeholder="Cari nama anggota atau grup..."
-            oninput="filterGroups()"
-          />
+          <hr>
+
+          <div>
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control mb-3"
+              placeholder="Cari nama anggota atau grup..."
+              oninput="filterGroups()"
+            />
+          </div>
 
         </div>
 
-        <div class="row g-4" id="groupList"></div>
+        <div style="margin-top: -50px;" class="row g-4" id="groupList"></div>
         
 
         <button style="margin-top: 30px;" type="button" onclick='logout()' class="btn btn-danger">Logout</button>
