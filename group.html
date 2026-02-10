@@ -375,13 +375,13 @@ function renderGroups() {
       <div class="col-lg-6 mb-3 group-card" data-group="${group.name}">
         <div class="card shadow-sm">
           <div class="card-body">
-            <h5>${group.name}</h5>
+            <h5>${group.name.toUpperCase()}</h5>
             <p class="text-muted" style="margin-bottom: 20px; font-size:10pt;">
               ${group.members.length} anggota
             </p>
             <hr>
 
-            ${group.members.map(m => {
+            ${group.members.map((m, index) => {
               const hasScore = m.score !== null && m.score !== undefined && Number(m.score) > 0;
 
               return `
@@ -391,7 +391,7 @@ function renderGroups() {
                   data-member="${m.name}"
                 >
                   <div>
-                    <strong>${m.name}</strong><br>
+                    <strong>${index + 1}. ${m.name}</strong><br>
                     <p style="font-size: 10pt; margin:0;">
                       Score : ${hasScore ? Number(m.score).toFixed(2) : '-'}
                     </p>
