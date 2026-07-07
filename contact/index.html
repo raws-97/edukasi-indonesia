@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Edukasi Institusi Indonesia - Contact</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/lineicons.css" />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+      .contact-info-card {
+        background: var(--neu-surface);
+        border-radius: var(--neu-radius-lg);
+        box-shadow: var(--neu-shadow-outset);
+        padding: 28px 24px;
+        text-align: center;
+        transition: all 0.35s ease;
+        height: 100%;
+      }
+      .contact-info-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 10px 10px 20px #c8cdd6, -10px -10px 20px #ffffff;
+      }
+      .contact-info-card .contact-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #123293 0%, #1a42c0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        box-shadow: var(--neu-shadow-primary);
+      }
+      .contact-info-card .contact-icon i {
+        font-size: 26px;
+        color: #fff;
+      }
+      .contact-info-card h5 { margin-bottom: 8px; }
+      .contact-info-card p { font-size: 15px; line-height: 24px; }
+      .contact-form-card {
+        background: var(--neu-surface);
+        border-radius: var(--neu-radius-lg);
+        box-shadow: var(--neu-shadow-outset);
+        padding: 40px 32px;
+      }
+      .contact-form-card .form-group { margin-bottom: 20px; }
+      .contact-form-card .form-group label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--neu-text);
+        font-size: 15px;
+      }
+      .contact-form-card .form-group input,
+      .contact-form-card .form-group textarea,
+      .contact-form-card .form-group select {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: var(--neu-radius-sm);
+        border: none;
+        background: var(--neu-bg);
+        box-shadow: var(--neu-shadow-inset);
+        font-size: 16px;
+        color: var(--neu-text);
+        transition: all 0.3s ease;
+      }
+      .contact-form-card .form-group input:focus,
+      .contact-form-card .form-group textarea:focus,
+      .contact-form-card .form-group select:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(18,50,147,0.2), var(--neu-shadow-inset);
+      }
+      .contact-form-card .form-group textarea { min-height: 140px; resize: vertical; }
+      .contact-form-card .form-group input::placeholder,
+      .contact-form-card .form-group textarea::placeholder { color: #a0aec0; }
+      .map-wrapper {
+        background: var(--neu-surface);
+        border-radius: var(--neu-radius-lg);
+        box-shadow: var(--neu-shadow-outset);
+        padding: 8px;
+        overflow: hidden;
+      }
+      .map-wrapper iframe {
+        width: 100%;
+        height: 350px;
+        border: none;
+        border-radius: var(--neu-radius);
+      }
+      .alert-message {
+        display: none;
+        padding: 16px 20px;
+        border-radius: var(--neu-radius-sm);
+        margin-bottom: 24px;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .alert-message.success {
+        display: block;
+        background: #e8f7ee;
+        color: #2e7d32;
+        border: 1px solid #c8e6c9;
+      }
+      .alert-message.error {
+        display: block;
+        background: #fdecea;
+        color: #c62828;
+        border: 1px solid #ffcdd2;
+      }
+      .wa-button {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 60px;
+        height: 60px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(37,211,102,.4);
+        z-index: 9999;
+        transition: transform .3s, box-shadow .3s;
+        animation: wa-pulse 2s infinite;
+      }
+      .wa-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 24px rgba(37,211,102,.6);
+      }
+      .wa-button svg { width: 32px; height: 32px; fill: #fff; }
+      @keyframes wa-pulse {
+        0%, 100% { box-shadow: 0 4px 16px rgba(37,211,102,.4); }
+        50% { box-shadow: 0 4px 24px rgba(37,211,102,.8); }
+      }
+      .wa-popup {
+        position: fixed;
+        bottom: 96px;
+        right: 24px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 16px 20px;
+        box-shadow: 0 4px 24px rgba(0,0,0,.15);
+        z-index: 9998;
+        max-width: 260px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity .4s, transform .4s;
+        pointer-events: none;
+      }
+      .wa-popup.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+      .wa-popup::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        right: 24px;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        transform: rotate(45deg);
+        box-shadow: 4px 4px 8px rgba(0,0,0,.06);
+      }
+      .wa-popup p { margin: 0; font-size: 14px; color: #333; line-height: 1.5; }
+      .wa-popup-close {
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: #999;
+        cursor: pointer;
+        position: absolute;
+        top: 6px;
+        right: 12px;
+        line-height: 1;
+      }
+      .wa-popup-close:hover { color: #333; }
+    </style>
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <div class="preloader">
+      <div class="loader">
+        <div class="spinner">
+          <div class="spinner-container">
+            <div class="spinner-rotator">
+              <div class="spinner-left">
+                <div class="spinner-circle"></div>
+              </div>
+              <div class="spinner-right">
+                <div class="spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../index.html">
+                  <img src="../assets/img/logo/logo.png" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="../services/">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="../about/">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll active" href="#home">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+          <div class="col-lg-6">
+            <div class="hero-content">
+              <h1 class="wow fadeInUp" data-wow-delay=".4s">
+                Contact Us
+              </h1>
+              <p class="wow fadeInUp" data-wow-delay=".6s">
+                Kami siap membantu Anda. Hubungi kami melalui formulir di bawah ini atau kunjungi kantor kami langsung.
+              </p>
+              <a href="#contact-form" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".8s">Kirim Pesan</a>
+              <a href="#contact-form" class="scroll-bottom">
+                <i class="lni lni-arrow-down"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
+              <img src="../assets/img/hero/hero-image.png" width="100%" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-info" class="feature-extended-section pt-100">
+      <div class="feature-extended-wrapper">
+        <div class="container">
+          <div class="row g-4 mb-60">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+              <div class="contact-info-card">
+                <div class="contact-icon"><i class="lni lni-map-marker"></i></div>
+                <h5>Alamat</h5>
+                <p>Gedung Wirausaha Lantai 1 Unit 104, Jl. HR Rasuna Said Kav. C-5, Jakarta Selatan (12920)</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+              <div class="contact-info-card">
+                <div class="contact-icon"><i class="lni lni-phone"></i></div>
+                <h5>Telepon</h5>
+                <p>+62 856-8461-544</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+              <div class="contact-info-card">
+                <div class="contact-icon"><i class="lni lni-envelope"></i></div>
+                <h5>Email</h5>
+                <p>info@eduindonesia.id</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-7 wow fadeInUp" data-wow-delay=".2s">
+              <div class="contact-form-card" id="contact-form">
+                <div class="section-title mb-30">
+                  <h2 class="mb-25">Kirim Pesan</h2>
+                  <p>Isi formulir di bawah ini dan tim kami akan merespons dalam 1x24 jam kerja.</p>
+                </div>
+                <div class="alert-message" id="alertMessage"></div>
+                <form id="contactForm">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" placeholder="Nama Anda" required />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="email@contoh.com" required />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="phone">Nomor Telepon</label>
+                        <input type="tel" id="phone" placeholder="08xx-xxxx-xxxx" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="subject">Subjek</label>
+                        <select id="subject" required>
+                          <option value="" disabled selected>Pilih subjek</option>
+                          <option value="In-House Training">In-House Training</option>
+                          <option value="Public Training">Public Training</option>
+                          <option value="Konsultasi SDM">Konsultasi SDM</option>
+                          <option value="Sertifikasi">Sertifikasi</option>
+                          <option value="Kerjasama">Kerjasama</option>
+                          <option value="Lainnya">Lainnya</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                  </div>
+                  <button type="submit" class="main-btn btn-hover" style="width:100%;" id="submitBtn">
+                    Kirim Pesan
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-5 wow fadeInUp" data-wow-delay=".3s">
+              <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1166695718916!2d106.829112!3d-6.230277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e5d6d7e7d7%3A0x6d7c7f4f48e6b6e8!2sGedung%20Wirausaha!5e0!3m2!1sen!2sid!4v1620000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Kantor Edukasi Indonesia"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="widget-wrapper">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6">
+              <div class="footer-widget">
+                <div class="logo mb-30">
+                  <a href="../index.html">
+                    <img src="../assets/img/logo/logo.png" alt="" width="200px" />
+                  </a>
+                </div>
+                <p class="desc mb-30 text-white">
+                  Gedung Wirausaha Lantai 1 Unit 104, Jl. HR Rasuna Said Kav. C-5, Jakarta Selatan (12920).
+                </p>
+                <ul class="socials">
+                  <li>
+                    <a href="https://www.instagram.com/info.eduindonesia/" target="_blank">
+                      <i class="lni lni-instagram-filled"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/company/edukasi-indonesia" target="_blank">
+                      <i class="lni lni-linkedin-original"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-6">
+              <div class="footer-widget">
+                <h3>About Us</h3>
+                <ul class="links">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../services/">Services</a></li>
+                  <li><a href="../about/">About</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6">
+              <div class="footer-widget">
+                <h3>Last Training</h3>
+                <ul class="links">
+                  <li><a href="javascript:void(0)">How it works</a></li>
+                  <li><a href="javascript:void(0)">Privacy policy</a></li>
+                  <li><a href="javascript:void(0)">Terms of service</a></li>
+                  <li><a href="javascript:void(0)">Refund policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <a href="https://wa.me/628568461544" target="_blank" rel="noopener" class="wa-button" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 32 32"><path d="M16.04.24C7.2.24.08 7.36.08 16.2c0 2.8.72 5.52 2.08 7.88L.08 31.76l7.92-2.08a15.9 15.9 0 008.04 2.04c8.84 0 15.96-7.12 15.96-15.96S24.88.24 16.04.24zm0 29.36c-2.48 0-4.92-.68-7-1.96l-.48-.28-4.72 1.24 1.24-4.56-.32-.52c-1.44-2.2-2.2-4.76-2.2-7.32C2.56 8.76 8.6 2.72 16 2.72c3.6 0 7 1.4 9.52 3.96a13.36 13.36 0 013.96 9.52c-.04 7.44-6.08 13.4-13.44 13.4zm7.36-10.04c-.4-.2-2.36-1.16-2.72-1.28-.36-.16-.64-.2-.88.2-.28.4-1.04 1.28-1.28 1.56-.24.28-.48.32-.88.12-.4-.2-1.68-.64-3.2-1.96-1.2-1.08-2-2.36-2.2-2.76-.24-.4-.04-.6.16-.84.2-.2.4-.48.6-.72.2-.24.28-.4.4-.68.12-.28.08-.52-.04-.72-.12-.2-.88-2.16-1.2-2.92-.32-.76-.64-.64-.88-.64h-.72c-.24 0-.68.08-1.04.4-.36.32-1.36 1.32-1.36 3.24 0 1.92 1.4 3.76 1.6 4 .2.24 2.72 4.2 6.64 5.88.92.4 1.64.64 2.2.8.92.28 1.76.24 2.44.16.72-.12 2.36-.96 2.68-1.88.36-.92.36-1.72.24-1.88-.12-.16-.36-.24-.76-.44z"/></svg>
+    </a>
+    <div class="wa-popup" id="waPopup">
+      <button class="wa-popup-close" id="waPopupClose">&times;</button>
+      <p id="waPopupMsg">Butuh bantuan? Chat kami langsung via WhatsApp!</p>
+    </div>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script>
+      (function() {
+        var popup = document.getElementById('waPopup');
+        var msgEl = document.getElementById('waPopupMsg');
+        var close = document.getElementById('waPopupClose');
+        var dismissed = sessionStorage.getItem('waPopupDismissed');
+        if (dismissed) return;
+
+        var messages = [
+          'Butuh bantuan? Chat kami langsung via WhatsApp!',
+          'Ada pertanyaan seputar training? Kami siap membantu!',
+          'Dapatkan info promo training terbaru, chat sekarang!',
+          'Konsultasi gratis untuk program pelatihan Anda!'
+        ];
+        var step = 0;
+        var timers = [];
+
+        function hidePopup() {
+          popup.classList.remove('show');
+        }
+        function clearAllTimers() {
+          timers.forEach(function(t) { clearTimeout(t); });
+          timers = [];
+        }
+        function showNext() {
+          if (step >= messages.length) return;
+          msgEl.textContent = messages[step];
+          step++;
+          popup.classList.add('show');
+          timers.push(setTimeout(function() {
+            hidePopup();
+            if (step < messages.length) {
+              timers.push(setTimeout(showNext, 8000));
+            }
+          }, 5000));
+        }
+        close.addEventListener('click', function() {
+          hidePopup();
+          clearAllTimers();
+          sessionStorage.setItem('waPopupDismissed', '1');
+        });
+        timers.push(setTimeout(showNext, 3000));
+      })();
+    </script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+      (function() {
+        var form = document.getElementById('contactForm');
+        var alertEl = document.getElementById('alertMessage');
+        var submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Mengirim...';
+
+          var formData = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value.trim()
+          };
+
+          setTimeout(function() {
+            alertEl.className = 'alert-message success';
+            alertEl.textContent = 'Pesan berhasil dikirim! Tim kami akan menghubungi Anda segera.';
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Kirim Pesan';
+          }, 1200);
+        });
+      })();
+    </script>
+  </body>
+</html>

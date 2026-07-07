@@ -18,6 +18,9 @@
   /*=====================================
     Sticky
     ======================================= */
+  var pathSegments = window.location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+  var logoPrefix = pathSegments.length > 0 ? '../' : '';
+
   window.onscroll = function () {
     const header_navbar = document.querySelector(".navbar-area");
     const sticky = header_navbar.offsetTop;
@@ -25,10 +28,10 @@
 
     if (window.pageYOffset > sticky) {
       header_navbar.classList.add("sticky");
-      logo.src = "assets/img/logo/logo-2.png";
+      logo.src = logoPrefix + "assets/img/logo/logo-2.png";
     } else {
       header_navbar.classList.remove("sticky");
-      logo.src = "assets/img/logo/logo.png";
+      logo.src = logoPrefix + "assets/img/logo/logo.png";
     }
 
     // show or hide the back-top-top button
@@ -48,11 +51,17 @@
 
   pageLink.forEach((elem) => {
     elem.addEventListener("click", (e) => {
-      e.preventDefault();
-      document.querySelector(elem.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
-        offsetTop: 1 - 60,
-      });
+      var href = elem.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            offsetTop: 1 - 60,
+          });
+        }
+      }
     });
   });
 
@@ -67,7 +76,9 @@
     for (let i = 0; i < sections.length; i++) {
       const currLink = sections[i];
       const val = currLink.getAttribute("href");
+      if (!val || !val.startsWith("#")) continue;
       const refElement = document.querySelector(val);
+      if (!refElement) continue;
       const scrollTopMinus = scrollPos + 73;
       if (
         refElement.offsetTop <= scrollTopMinus &&

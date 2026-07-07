@@ -3,15 +3,44 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Edukasi Institusi Indonesia</title>
+    <title>Edukasi Institusi Indonesia - Services</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/lineicons.css" />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
     <style>
+      .service-card {
+        background: var(--neu-surface);
+        border-radius: var(--neu-radius-lg);
+        box-shadow: var(--neu-shadow-outset);
+        padding: 36px 28px;
+        transition: all 0.35s ease;
+        height: 100%;
+      }
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 10px 10px 20px #c8cdd6, -10px -10px 20px #ffffff;
+      }
+      .service-card .icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #123293 0%, #1a42c0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        box-shadow: var(--neu-shadow-primary);
+      }
+      .service-card .icon i {
+        font-size: 32px;
+        color: #fff;
+      }
+      .service-card h4 { margin-bottom: 12px; }
+      .service-card p { font-size: 16px; line-height: 26px; }
       .wa-button {
         position: fixed;
         bottom: 24px;
@@ -111,8 +140,8 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
-                  <img src="assets/img/logo/logo.png" alt="Logo" />
+                <a class="navbar-brand" href="../index.html">
+                  <img src="../assets/img/logo/logo.png" alt="Logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="toggler-icon"></span>
@@ -122,16 +151,16 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <ul id="nav" class="navbar-nav ms-auto">
                     <li class="nav-item">
-                      <a class="page-scroll active" href="#home">Home</a>
+                      <a class="page-scroll" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="services/">Services</a>
+                      <a class="page-scroll active" href="#home">Services</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="about/">About</a>
+                      <a class="page-scroll" href="../about/">About</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="contact/">Contact</a>
+                      <a class="page-scroll" href="../contact/">Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -148,106 +177,78 @@
           <div class="col-lg-6">
             <div class="hero-content">
               <h1 class="wow fadeInUp" data-wow-delay=".4s">
-                Edukasi Indonesia
+                Our Services
               </h1>
               <p class="wow fadeInUp" data-wow-delay=".6s">
-                EDUKASI INSTITUSI INDONESIA meningkatkan sumber daya manusia melalui pelatihan, konsultasi, dan kegiatan edukasi. Dengan komitmen "Unlocking Future Potential," kami memberdayakan individu untuk masa depan yang lebih cerah.
+                Kami menyediakan layanan pelatihan, konsultasi, dan pengembangan SDM yang dirancang untuk memenuhi kebutuhan spesifik organisasi Anda.
               </p>
-              <a href="#training" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".8s">Explore Training</a>
-              <a href="#training" class="scroll-bottom">
+              <a href="#services" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".8s">Explore Services</a>
+              <a href="#services" class="scroll-bottom">
                 <i class="lni lni-arrow-down"></i>
               </a>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
-              <img src="assets/img/hero/hero-image.png" width="100%" alt="" />
+              <img src="../assets/img/hero/hero-image.png" width="100%" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="training" class="feature-extended-section pt-100">
+    <section id="services" class="feature-extended-section pt-100">
       <div class="feature-extended-wrapper">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xxl-5 col-xl-6 col-lg-8 col-md-9">
               <div class="section-title text-center mb-60 wow fadeInUp" data-wow-delay=".2s">
-                <h2 class="mb-25">Training</h2>
-                <p>Program pelatihan profesional untuk mengembangkan potensi diri dan organisasi Anda.</p>
+                <h2 class="mb-25">Layanan Kami</h2>
+                <p>Solusi lengkap untuk pengembangan kapasitas individu dan organisasi melalui program yang terstruktur dan profesional.</p>
               </div>
             </div>
           </div>
-          <div class="row wow fadeInUp" data-wow-delay=".7s">
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/1.jpg" alt="" />
-                </div>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+              <div class="service-card">
+                <div class="icon"><i class="lni lni-graduation"></i></div>
+                <h4>In-House Training</h4>
+                <p>Program pelatihan yang disesuaikan dengan kebutuhan spesifik organisasi Anda, diselenggarakan langsung di lokasi perusahaan.</p>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/2.jpg" alt="" />
-                </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+              <div class="service-card">
+                <div class="icon"><i class="lni lni-users"></i></div>
+                <h4>Public Training</h4>
+                <p>Pelatihan terbuka dengan jadwal rutin sepanjang tahun, memungkinkan peserta dari berbagai organisasi untuk berkolaborasi dan berjejaring.</p>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/3.jpg" alt="" />
-                </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+              <div class="service-card">
+                <div class="icon"><i class="lni lni-consulting"></i></div>
+                <h4>Konsultasi SDM</h4>
+                <p>Layanan konsultasi strategis untuk pengembangan sistem manajemen SDM, assessment center, dan talent management.</p>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/4.jpg" alt="" />
-                </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+              <div class="service-card">
+                <div class="icon"><i class="lni lni-certificate"></i></div>
+                <h4>Sertifikasi Kompetensi</h4>
+                <p>Program sertifikasi yang diakui secara nasional untuk memvalidasi kompetensi profesional sesuai standar industri.</p>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/5.jpg" alt="" />
-                </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+              <div class="service-card">
+                <div class="icon"><i class="lni lni-laptop-phone"></i></div>
+                <h4>E-Learning</h4>
+                <p>Platform pembelajaran digital yang fleksibel dengan materi berkualitas tinggi, dapat diakses kapan saja dan di mana saja.</p>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/6.jpg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/7.jpg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/8.jpg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/9.jpg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div>
-                  <img width="100%" src="assets/img/training/10.jpg" alt="" />
-                </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+              <div class="service-card">
+                <div class="icon"><i class="lni lni-target"></i></div>
+                <h4>Coaching & Mentoring</h4>
+                <p>Program pendampingan intensif oleh para ahli untuk membantu individu dan tim mencapai potensi terbaik mereka.</p>
               </div>
             </div>
           </div>
@@ -255,15 +256,15 @@
       </div>
     </section>
 
-    <section id="contact" class="subscribe-section pt-120">
+    <section class="subscribe-section pt-120">
       <div class="container">
         <div class="subscribe-wrapper img-bg">
           <div class="row align-items-center">
             <div class="col-xl-6 col-lg-7">
               <div class="section-title mb-15">
-                <h2 class="text-white mb-25">Subscribe Our Newsletter</h2>
+                <h2 class="text-white mb-25">Butuh Solusi Khusus?</h2>
                 <p class="text-white pr-5">
-                  Tetap Terhubung dengan Info Terbaru!
+                  Hubungi kami untuk mendiskusikan kebutuhan pelatihan dan pengembangan yang sesuai dengan organisasi Anda.
                 </p>
               </div>
             </div>
@@ -271,7 +272,7 @@
               <form action="#" class="subscribe-form">
                 <input type="email" name="subs-email" id="subs-email" placeholder="Your Email" />
                 <button type="submit" class="main-btn btn-hover">
-                  Subscribe
+                  Hubungi Kami
                 </button>
               </form>
             </div>
@@ -287,8 +288,8 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
               <div class="footer-widget">
                 <div class="logo mb-30">
-                  <a href="index.html">
-                    <img src="assets/img/logo/logo.png" alt="" width="200px" />
+                  <a href="../index.html">
+                    <img src="../assets/img/logo/logo.png" alt="" width="200px" />
                   </a>
                 </div>
                 <p class="desc mb-30 text-white">
@@ -312,9 +313,9 @@
               <div class="footer-widget">
                 <h3>About Us</h3>
                 <ul class="links">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="services/">Services</a></li>
-                  <li><a href="about/">About</a></li>
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="index.html">Services</a></li>
+                  <li><a href="../about/">About</a></li>
                 </ul>
               </div>
             </div>
@@ -338,13 +339,6 @@
       <i class="lni lni-chevron-up"></i>
     </a>
 
-    <div class="lightbox-overlay" id="lightboxOverlay">
-      <span class="lightbox-close">&times;</span>
-      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
-    </div>
-
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
     <a href="https://wa.me/628568461544" target="_blank" rel="noopener" class="wa-button" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 32 32"><path d="M16.04.24C7.2.24.08 7.36.08 16.2c0 2.8.72 5.52 2.08 7.88L.08 31.76l7.92-2.08a15.9 15.9 0 008.04 2.04c8.84 0 15.96-7.12 15.96-15.96S24.88.24 16.04.24zm0 29.36c-2.48 0-4.92-.68-7-1.96l-.48-.28-4.72 1.24 1.24-4.56-.32-.52c-1.44-2.2-2.2-4.76-2.2-7.32C2.56 8.76 8.6 2.72 16 2.72c3.6 0 7 1.4 9.52 3.96a13.36 13.36 0 013.96 9.52c-.04 7.44-6.08 13.4-13.44 13.4zm7.36-10.04c-.4-.2-2.36-1.16-2.72-1.28-.36-.16-.64-.2-.88.2-.28.4-1.04 1.28-1.28 1.56-.24.28-.48.32-.88.12-.4-.2-1.68-.64-3.2-1.96-1.2-1.08-2-2.36-2.2-2.76-.24-.4-.04-.6.16-.84.2-.2.4-.48.6-.72.2-.24.28-.4.4-.68.12-.28.08-.52-.04-.72-.12-.2-.88-2.16-1.2-2.92-.32-.76-.64-.64-.88-.64h-.72c-.24 0-.68.08-1.04.4-.36.32-1.36 1.32-1.36 3.24 0 1.92 1.4 3.76 1.6 4 .2.24 2.72 4.2 6.64 5.88.92.4 1.64.64 2.2.8.92.28 1.76.24 2.44.16.72-.12 2.36-.96 2.68-1.88.36-.92.36-1.72.24-1.88-.12-.16-.36-.24-.76-.44z"/></svg>
     </a>
@@ -352,6 +346,9 @@
       <button class="wa-popup-close" id="waPopupClose">&times;</button>
       <p id="waPopupMsg">Butuh bantuan? Chat kami langsung via WhatsApp!</p>
     </div>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
     <script>
       (function() {
         var popup = document.getElementById('waPopup');
@@ -396,6 +393,6 @@
         timers.push(setTimeout(showNext, 3000));
       })();
     </script>
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>
