@@ -6,8 +6,13 @@
   };
 
   function fadeout() {
-    document.querySelector(".preloader").style.opacity = "0";
-    document.querySelector(".preloader").style.display = "none";
+    const preloader = document.querySelector(".preloader");
+    if (!preloader) return;
+    preloader.style.opacity = "0";
+    preloader.style.pointerEvents = "none";
+    setTimeout(function () {
+      preloader.style.display = "none";
+    }, 500);
   }
 
   /*=====================================
@@ -94,4 +99,25 @@
 
   // WOW active
   new WOW().init();
+
+  // ===== Lightbox
+  const lightboxOverlay = document.getElementById("lightboxOverlay");
+  const lightboxImg = document.getElementById("lightboxImg");
+
+  if (lightboxOverlay && lightboxImg) {
+    document.querySelectorAll("#training .single-feature-extended img").forEach(function (img) {
+      img.addEventListener("click", function () {
+        lightboxImg.src = this.src;
+        lightboxOverlay.classList.add("open");
+      });
+    });
+
+    lightboxOverlay.addEventListener("click", function () {
+      lightboxOverlay.classList.remove("open");
+    });
+
+    lightboxImg.addEventListener("click", function (e) {
+      e.stopPropagation();
+    });
+  }
 })();
